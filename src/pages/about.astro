@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const pageTitle = "About me";
 
 const info = {
@@ -11,6 +13,8 @@ const hobbies = ["Reading", "Writing", "Coding", "Gaming"]
 const happy= true;
 const finished = false;
 const goals = 3;
+
+const itemColor = "pink";
 ---
 
 <html lang="en">
@@ -20,6 +24,31 @@ const goals = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        <style define:vars={{itemColor}}>
+         h1{
+            color: red;
+            font-size: 3rem;
+         }
+         h2{
+            color: purple;
+            font-size: 2rem;
+         }
+         p{
+            font-size: 1rem;
+         }
+         a{
+            text-decoration: none;
+            color: pink;
+         }
+         a:visited{
+            color: green;
+            text-decoration: none;
+         }
+         .item{
+            color: var(--itemColor);
+            font-weight: bold;
+         }
+        </style>
 	</head>
 	<body>
 		<h1>{pageTitle}</h1>
@@ -28,7 +57,7 @@ const goals = 3;
         <p>i am {info.age} years old</p>
         <p><b>My hobbies are</b></p>
         <ul>
-        {hobbies.map((hobby) => <li>{hobby}</li>)}
+        {hobbies.map((hobby) => <li class="item">{hobby}</li>)}
         </ul>
         {happy && <p>I am happy to be learning Astro</p>}
         {finished && <p>i am not finished with learning Astro</p>}
