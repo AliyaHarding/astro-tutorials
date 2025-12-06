@@ -1,5 +1,6 @@
 ---
-title: My second blog post
+layout: ../../layouts/MarkdownPostLayout.astro
+title: My third blog post
 author: Astro Learner
 description: getting the hang of using Astro
 image:

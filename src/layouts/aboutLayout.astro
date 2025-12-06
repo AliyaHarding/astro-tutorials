@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
-import Header from '../components/header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from './BaseLayout.astro';
 const {pageTitle} = Astro.props;
 
 const info = {
@@ -17,14 +15,7 @@ const goals = 3;
 
 const itemColor = "pink";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+<BaseLayout pageTitle={pageTitle}>
         <style define:vars={{itemColor}}>
          h1{
             color: red;
@@ -50,11 +41,6 @@ const itemColor = "pink";
             font-weight: bold;
          }
         </style>
-	</head>
-	<body>
-            <Header />
-
-		<h1>{pageTitle}</h1>
         <h2>this is a tutorial for making use of the framework called Astro</h2>
         <p>my name is {info.firstName} and this is my website</p>
         <p>i am {info.age} years old</p>
@@ -65,11 +51,5 @@ const itemColor = "pink";
         {happy && <p>I am happy to be learning Astro</p>}
         {finished && <p>i am not finished with learning Astro</p>}
         {goals === 3 ? <p>my goal is to finish in 3 days</p> : <p>my goal is not 3 days</p>}
-        <slot />
-        <Footer />
-          <script>
-      import "../scripts/menu.js";
-  </script>
+</BaseLayout>
 
-	</body>
-</html>
