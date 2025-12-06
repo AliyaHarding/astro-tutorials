@@ -9,5 +9,4 @@ image:
 pubDate: 2025-7-10
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
-# third blog post 
 making more use of Astro and thinking about using this more often
